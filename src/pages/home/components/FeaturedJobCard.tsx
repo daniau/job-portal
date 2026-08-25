@@ -1,4 +1,3 @@
-import { getJobs } from "@/services/jobs.service";
 import Button from "@/shared/Button";
 import { Job } from "@/types/job";
 import { Briefcase, DollarSign, MapPin } from "lucide-react";
