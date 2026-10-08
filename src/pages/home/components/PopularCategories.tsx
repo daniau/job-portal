@@ -9,7 +9,6 @@ async function CategoryData() {
       <PopularCategoriesCard  categories={categories} />
     )
   } catch (error) {
-    // console.error(error); 
     return <div className="text-red-500 text-center text-lg font-bold">Something went wrong</div>;
   }
 }

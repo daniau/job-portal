@@ -8,7 +8,6 @@ interface PopularCategoriesCardProps {
 }
 
 export default  function PopularCategoriesCard( {categories} : PopularCategoriesCardProps) {
-  console.log(categories);
   return (
       <div 
        className="px-8 w-[90%]  mx-auto grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-5 gap-x-4 gap-y-6 ">

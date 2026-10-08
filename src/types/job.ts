@@ -5,6 +5,7 @@ export interface Category {
 }
 export interface Job {
   id: string;
+  createdAt: string;
   title: string;
   company: string;
   location: string;
