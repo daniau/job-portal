@@ -1,6 +1,6 @@
-import HeroSection from "@/pages/home/components/HeroSection";
+import HeroSection from "@/features/home/components/HeroSection";
 import { Suspense } from "react";
-import PopularCategories from "@/pages/home/components/PopularCategories";
+import PopularCategories from "@/features/home/components/PopularCategories";
 import FeaturedJob from "./components/FeaturedJob";
 
 export default function HomePageComponent() {

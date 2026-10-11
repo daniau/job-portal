@@ -1,4 +1,4 @@
-import HomePageComponent from "@/pages/home/Home";
+import HomePageComponent from "@/features/home/Home";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Home Page - job Portal",
