@@ -1,7 +1,7 @@
 
 // import { URLSearchParams } from 'next/navigation';
 import { Job } from "@/types/job"
-function apiURL(path:string){
+export function apiURL(path:string){
   const base=process.env.API_URL
   if(!base) throw new Error("API_URL is not set")
     return new URL(path, base);

@@ -3,14 +3,12 @@ import PopularCategoriesCard from "./PopularCategoryCard";
 import PopularCategorySkeleton from "@/components/skeleton/PopularCategorySkeleton";
 import { Suspense } from "react";
 async function CategoryData() {
-  try {
+
     const categories = await getCategories();
     return (
       <PopularCategoriesCard  categories={categories} />
     )
-  } catch (error) {
-    return <div className="text-red-500 text-center text-lg font-bold">Something went wrong</div>;
-  }
+ 
 }
 
 export default  function PopularCategories() {

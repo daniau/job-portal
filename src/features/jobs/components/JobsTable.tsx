@@ -1,6 +1,7 @@
 import Button from "@/shared/Button"
 import { Job } from "@/types/job"
 import { Eye,Pencil,Trash2 } from "lucide-react"
+import Link from "next/link"
 export default function JobsTable({jobs}:{jobs: Job[]}) {
   return (
     <div className="bg-white  w-[90%] mx-auto shadow  border border-[#CCCCCC]  rounded-sm">
@@ -26,15 +27,15 @@ export default function JobsTable({jobs}:{jobs: Job[]}) {
           <td >{job.salary}</td>
           <td >{job.location}</td>
           <td ><div className="flex justify-center items-center gap-1">
-            <Button unstyled={true}  >
+            <Link href={`/jobs/${job.id}`}   >
               <Eye  size={20} className="text-[#338573] cursor-pointer"/>
-            </Button>
+            </Link>
             <Button unstyled={true}  >
               <Pencil size={20} className="text-[#04BCF6] cursor-pointer"/>
             </Button>
-            <Button unstyled={true}  >
+            <Link href={`/jobs/${job.id}`}  >
               <Trash2 size={20} className="text-[#FA0606] cursor-pointer    " />
-            </Button>
+            </Link>
           </div>
           </td>
 

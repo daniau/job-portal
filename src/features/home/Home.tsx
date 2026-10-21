@@ -1,5 +1,4 @@
 import HeroSection from "@/features/home/components/HeroSection";
-import { Suspense } from "react";
 import PopularCategories from "@/features/home/components/PopularCategories";
 import FeaturedJob from "./components/FeaturedJob";
 
