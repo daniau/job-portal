@@ -1,24 +1,24 @@
 'use client'
-import Button from "@/shared/Button";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import Search from "./Search";
+// import { usePathname, useSearchParams } from "next/navigation";
+// import { useRouter } from "next/navigation";
+// import Link from "next/link";
 export default function HeroSection() {
-  const searchParams = useSearchParams()
-  const pathname = usePathname()
-  const {replace} = useRouter()
+  // const searchParams = useSearchParams()
+  // const pathname = usePathname()
+  // const {replace} = useRouter()
 
-  function handleSearch(term: string) {
-    const params = new URLSearchParams()
-    if (term) {
-      params.set("jobTitle", term)
-    } else {
-      params.delete("jobTitle")
-    }
-    replace(`${pathname}?${params.toString()}`)
-  }
+  // function handleSearch(term: string) {
+  //   const params = new URLSearchParams(searchParams)
+  //   if (term) {
+  //     params.set("title", term)
+  //   } else {
+  //     params.delete("title")
+  //   }
+  //   replace(`${pathname}?${params.toString()}`)
+  // }
   return (
     <section className="bg-[#EFF6F2] min-h-[50vh] md:h-screen w-full relative overflow-hidden">
       <Image
@@ -57,13 +57,14 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.5 }}
             viewport={{ once: true }}
             className="flex items-center  mt-4 w-full">
-            <input type="text" name="search" id="search" placeholder="Search by job title....."
+             <Search />
+            {/* <input type="search" name="search" id="search" placeholder="Search by job title....."
               onChange={(e) => handleSearch(e.target.value)}
-              defaultValue={searchParams?.get("jobTitle")?.toString()}
+              defaultValue={searchParams?.get("title")?.toString()}
               className="w-full bg-white  rounded-l-md rounded-r-none  py-1.5  px-5 focus:outline-none  focus:none" />
-          <Link href={`/jobs?jobTitle=${searchParams?.get("jobTitle")?.toString() ?? ""}`}>
+          <Link href={`/jobs?title=${searchParams?.get("title")?.toString() ?? ""}`}>
           <Button title={"Search"} className="rounded-r-md rounded-l-none px-2 md:px-4 py-1.5 md:py-1" />
-          </Link>
+          </Link> */}
           </motion.div>
         </div>
 

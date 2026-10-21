@@ -2,15 +2,17 @@ import Button from "@/shared/Button";
 import { Job } from "@/types/job";
 import { Briefcase, DollarSign, MapPin } from "lucide-react";
 import Link from "next/link";
+
 interface FeaturedJobCardProps {
   jobs: Job[];
 }
 export default  function FeaturedJobCard({ jobs }: FeaturedJobCardProps) {
     return (
-    <section className=" px-4 py-8 container mx-auto">
-      <div className="flex flex-col gap-4  ">
+    <section className=" px-4 py-8 container mx-auto  ">
+      <div aria-label="Job-Card"  className="flex flex-col gap-4 md:w-[95%] md:mx-auto ">
         {jobs.map((job: Job, index: number) => (
-          <div key={`${job.id}-${index}`} className="bg-white p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-300 cursor-pointer
+          < div 
+           key={`${job.id}-${index}`} className="bg-white p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-300 cursor-pointer
           border border-[#EFEFF0] flex items-center justify-between flex-wrap">
             <div>
             <div className="flex items-center gap-2">
@@ -40,9 +42,9 @@ export default  function FeaturedJobCard({ jobs }: FeaturedJobCardProps) {
               <Button title="View Details" className="mt-4 md:mt-0 "/>
             </Link>
             
-          </div>
-        ))}
-      </div>
+            </div>   
+               ))}
+        </div>
     </section>
   );
-}
+} 

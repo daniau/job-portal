@@ -4,7 +4,7 @@ export default function FeaturedJobSkeleton() {
     <section className=" px-4 py-8 container mx-auto">
       {Array.from({ length: 4 }).map((_, index) => (
     
-      <div  key={index} className="flex flex-col gap-4">
+      <div  key={index} className="flex flex-col gap-4 md:w-[90%]">
         
           <div  className="bg-white p-4 rounded-lg shadow-md animate-pulse 
           border border-[#EFEFF0] mb-4">
