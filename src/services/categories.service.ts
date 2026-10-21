@@ -1,3 +1,4 @@
+
 export const getCategories = async () => {
   const response = await fetch(`${process.env.API_URL}/categories`);
   if (!response.ok) {

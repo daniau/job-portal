@@ -1,11 +1,21 @@
-// import { URLSearchParams } from 'next/navigation';
 
-export const getJobs = async (title?:string) => {
-  const params=new URLSearchParams()
-  if(title){
-    params.set('title',title.trim())
+// import { URLSearchParams } from 'next/navigation';
+import { Job } from "@/types/job"
+function apiURL(path:string){
+  const base=process.env.API_URL
+  if(!base) throw new Error("API_URL is not set")
+    return new URL(path, base);
+
+}
+export const getJobs = async (title?:string):Promise<Job[]> => {
+  const url=apiURL(`/jobs`)
+  const q=title?.trim()
+  if(q){
+   url.searchParams.set('title',q)
   }
- const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jobs/?${params.toString()}`);
+
+ const response = await fetch(url);
+ if(response.status===404&&q) return []
   if (!response.ok) {
     throw new Error(`Failed to fetch job:${response.statusText}`);
   }
@@ -14,7 +24,8 @@ export const getJobs = async (title?:string) => {
 }
 
 export const getJobById = async (id: string) => {
-  const response = await fetch(`${process.env.API_URL}/jobs/${id}`);
+  const url=apiURL("/jobs")
+  const response=await fetch(`${url}/${id}`)
   if (!response.ok) {
     throw new Error(`Failed to fetch job:${response.statusText}`);
   }
